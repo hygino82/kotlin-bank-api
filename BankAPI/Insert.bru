@@ -1,0 +1,19 @@
+meta {
+  name: Insert
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/account
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Juvenal",
+    "phone": "9941485922",
+    "document": "Meu RG"
+  }
+}

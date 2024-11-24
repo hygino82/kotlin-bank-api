@@ -1,0 +1,19 @@
+meta {
+  name: Find by Id
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8080/account/2
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Juvenal",
+    "phone": "9941485922",
+    "document": "Meu RG"
+  }
+}
