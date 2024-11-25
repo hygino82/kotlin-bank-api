@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseBody
+import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -19,7 +20,9 @@ import org.springframework.web.bind.annotation.RestController
 class AccountController(val repository: AccountRepository) {
 
     @PostMapping
-    fun create(@RequestBody account: Account): Account = repository.save(account);
+    @ResponseStatus(HttpStatus.CREATED)
+    fun create(@RequestBody account: Account): Account =
+        repository.save(account)
 
     @GetMapping
     fun getAll(): List<Account> = repository.findAll()
