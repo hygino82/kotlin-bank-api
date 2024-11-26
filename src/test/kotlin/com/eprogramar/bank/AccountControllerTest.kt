@@ -109,7 +109,7 @@ class AccountControllerTest {
         val account = accountRepository.save(Account(name = "Conta Teste", document = "01234567", phone = "12345678"))
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/account/${account.id}"))
-            .andExpect(MockMvcResultMatchers.status().isOk)
+            .andExpect(MockMvcResultMatchers.status().isNoContent)
             .andDo(MockMvcResultHandlers.print())
 
         val buscaPorId = accountRepository.findById(account.id!!)

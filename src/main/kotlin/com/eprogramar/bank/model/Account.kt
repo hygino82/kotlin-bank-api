@@ -2,7 +2,7 @@ package com.eprogramar.bank.model
 
 import jakarta.persistence.*
 
-@Entity
+@Entity(name = "account")
 @Table(name = "tb_account")
 data class Account(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
