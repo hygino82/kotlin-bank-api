@@ -2,6 +2,7 @@ package com.eprogramar.bank.controller
 
 import com.eprogramar.bank.model.Account
 import com.eprogramar.bank.service.AccountService
+import io.swagger.v3.oas.annotations.Operation
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -20,6 +21,7 @@ class AccountController(private val service: AccountService) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(summary = "Inserir conta", description = "Insere uma nova conta")
     fun create(@RequestBody account: Account): Account = service.create(account)
 
 
